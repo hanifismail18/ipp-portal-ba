@@ -1,0 +1,14 @@
+.env*
+!.env.example
+data/
+logs/
+cache/
+*.db
+*.sqlite*
+*.pdf
+*.png
+!ba_portal/frontend/**/*.png
+__pycache__/
+*.whl
+labels*/
+out/

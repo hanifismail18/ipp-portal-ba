@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: ipp-portal-ba
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - {key: PORT, value: "7860"}
+      - {key: LLM_CONCURRENCY, value: "1"}
+      - {key: IMG_DPI_EMBED, value: "150"}
+      - {key: WEB_CONCURRENCY, value: "1"}
+      - {key: TRUST_PROXY, value: "1"}
+      - {key: STORAGE_BACKEND, value: s3}
+      - {key: DATABASE_URL, sync: false}
+      - {key: S3_ENDPOINT_URL, sync: false}
+      - {key: S3_ACCESS_KEY_ID, sync: false}
+      - {key: S3_SECRET_ACCESS_KEY, sync: false}
+      - {key: S3_BUCKET, sync: false}
+      - {key: S3_REGION, sync: false}
+      - {key: ADMIN_TOKEN, sync: false}
+      - {key: KEY_ENC_SECRET, sync: false}
+      - {key: PUBLIC_BASE_URL, sync: false}

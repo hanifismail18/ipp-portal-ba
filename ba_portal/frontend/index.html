@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Portal BA</title>
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top gut"><div class="wrap">
+  <a class="brand" href="./"><span class="brand-mark" id="logo"></span><span><span class="brand-name" style="display:block">Portal BA</span><span class="brand-org">Dash Electric × IPP</span></span></a>
+  <label class="field">Nama pengirim <input class="input" id="name" placeholder="Nama lengkap" autocomplete="name" maxlength="120"></label>
+  <span data-theme-ctl></span>
+</div></header>
+
+<main class="gut"><div class="wrap">
+  <div class="drop hero" id="drop">
+    <div class="drop-ico" id="dropico"></div>
+    <div><div class="drop-t">Tarik PDF BA ke sini</div><div class="drop-s">Bisa banyak file sekaligus. Maks 20 MB per file. Hasil cek muncul otomatis.</div></div>
+    <label class="btn btn-primary">Pilih file<input type="file" accept="application/pdf,.pdf" multiple class="sr" id="pick"></label>
+  </div>
+  <div class="msgs" id="msgs" hidden></div>
+
+  <div class="desk" id="desk" hidden>
+    <nav class="panel rail" aria-label="Daftar file"><div class="rail-h" id="railh"></div><ul class="files" id="files"></ul></nav>
+    <section class="viewer" aria-label="Pratinjau PDF">
+      <div class="vbar" id="vbar"></div>
+      <div class="stage" id="stage"></div>
+    </section>
+    <aside class="panel vcol" id="vcol" aria-label="Hasil cek" aria-live="polite"></aside>
+  </div>
+
+  <section class="res" id="res" hidden aria-label="Rekap"></section>
+</div></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
